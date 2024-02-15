@@ -18,9 +18,18 @@
   },
   "devDependencies": {
     "@wordpress/scripts": "^19.2.2",
+    "autoprefixer": "^10.4.17",
+    "css-loader": "^6.10.0",
     "dir-archiver": "^1.1.1",
+    "mini-css-extract-plugin": "^2.8.0",
     "node-sass": "^7.0.1",
-    "rtlcss": "^3.5.0"
+    "postcss-loader": "^8.1.0",
+    "rtlcss": "^3.5.0",
+    "sass": "^1.70.0",
+    "sass-loader": "^14.1.0",
+    "style-loader": "^3.3.4",
+    "webpack": "^5.90.1",
+    "webpack-cli": "^5.1.4"
   },
   "rtlcssConfig": {
     "options": {
@@ -41,6 +50,10 @@
     "compile:rtl": "rtlcss style.css style-rtl.css",
     "lint:scss": "wp-scripts lint-style 'sass/**/*.scss'",
     "lint:js": "wp-scripts lint-js 'js/*.js'",
-    "bundle": "dir-archiver --src . --dest ../_s.zip --exclude .DS_Store .stylelintrc.json .eslintrc .git .gitattributes .github .gitignore README.md composer.json composer.lock node_modules vendor package-lock.json package.json .travis.yml phpcs.xml.dist sass style.css.map yarn.lock"
+    "bundle": "dir-archiver --src . --dest ../_s.zip --exclude .DS_Store .stylelintrc.json .eslintrc .git .gitattributes .github .gitignore README.md composer.json composer.lock node_modules vendor package-lock.json package.json .travis.yml phpcs.xml.dist sass style.css.map yarn.lock",
+    "start": "wp-scripts start"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.2"
   }
 }
