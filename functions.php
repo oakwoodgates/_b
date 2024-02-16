@@ -1,15 +1,15 @@
 <?php
 /**
- * onstage functions and definitions
+ * oakwood functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package onstage
+ * @package oakwood
  */
 
-if ( ! defined( 'ONSTAGE_VERSION' ) ) {
+if ( ! defined( 'OAKWOOD_VERSION' ) ) {
 	$theme = wp_get_theme();
-	define( 'ONSTAGE_VERSION', $theme->get( 'Version' ) );
+	define( 'OAKWOOD_VERSION', $theme->get( 'Version' ) );
 }
 
 /**
@@ -19,14 +19,14 @@ if ( ! defined( 'ONSTAGE_VERSION' ) ) {
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function onstage_setup() {
+function oakwood_setup() {
 	/*
 		* Make theme available for translation.
 		* Translations can be filed in the /languages/ directory.
-		* If you're building a theme based on onstage, use a find and replace
-		* to change 'onstage' to the name of your theme in all the template files.
+		* If you're building a theme based on oakwood, use a find and replace
+		* to change 'oakwood' to the name of your theme in all the template files.
 		*/
-	load_theme_textdomain( 'onstage', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'oakwood', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -49,7 +49,7 @@ function onstage_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
-			'menu-1' => esc_html__( 'Primary', 'onstage' ),
+			'menu-1' => esc_html__( 'Primary', 'oakwood' ),
 		)
 	);
 
@@ -74,7 +74,7 @@ function onstage_setup() {
 	add_theme_support(
 		'custom-background',
 		apply_filters(
-			'onstage_custom_background_args',
+			'oakwood_custom_background_args',
 			array(
 				'default-color' => 'ffffff',
 				'default-image' => '',
@@ -100,7 +100,7 @@ function onstage_setup() {
 		)
 	);
 }
-add_action( 'after_setup_theme', 'onstage_setup' );
+add_action( 'after_setup_theme', 'oakwood_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -109,22 +109,22 @@ add_action( 'after_setup_theme', 'onstage_setup' );
  *
  * @global int $content_width
  */
-function onstage_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'onstage_content_width', 640 );
+function oakwood_content_width() {
+	$GLOBALS['content_width'] = apply_filters( 'oakwood_content_width', 640 );
 }
-add_action( 'after_setup_theme', 'onstage_content_width', 0 );
+add_action( 'after_setup_theme', 'oakwood_content_width', 0 );
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function onstage_widgets_init() {
+function oakwood_widgets_init() {
 	register_sidebar(
 		array(
-			'name'          => esc_html__( 'Sidebar', 'onstage' ),
+			'name'          => esc_html__( 'Sidebar', 'oakwood' ),
 			'id'            => 'sidebar-1',
-			'description'   => esc_html__( 'Add widgets here.', 'onstage' ),
+			'description'   => esc_html__( 'Add widgets here.', 'oakwood' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
@@ -132,27 +132,27 @@ function onstage_widgets_init() {
 		)
 	);
 }
-add_action( 'widgets_init', 'onstage_widgets_init' );
+add_action( 'widgets_init', 'oakwood_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
  */
-function onstage_scripts() {
+function oakwood_scripts() {
 	$dir = get_template_directory_uri();
 	$min = ( defined( 'WP_DEBUG' ) && true === WP_DEBUG ) ? '' : '.min';
-	$v = ( ! empty( $min ) ) ? ONSTAGE_VERSION : time();
+	$v = ( ! empty( $min ) ) ? OAKWOOD_VERSION : time();
 
-	wp_enqueue_style( 'onstage-style', $dir . '/assets/css/styles' . $min . '.css', [], $v );
-	// wp_style_add_data( 'onstage-style', 'rtl', 'replace' );
+	wp_enqueue_style( 'oakwood-style', $dir . '/assets/css/styles' . $min . '.css', [], $v );
+	// wp_style_add_data( 'oakwood-style', 'rtl', 'replace' );
 
-	wp_enqueue_script( 'onstage-vendor', $dir . '/assets/js/vendor' . $min . '.js', [], $v, true );
-	wp_enqueue_script( 'onstage-custom', $dir . '/assets/js/custom' . $min . '.js', [], $v, true );
+	wp_enqueue_script( 'oakwood-vendor', $dir . '/assets/js/vendor' . $min . '.js', [], $v, true );
+	wp_enqueue_script( 'oakwood-custom', $dir . '/assets/js/custom' . $min . '.js', [], $v, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'onstage_scripts' );
+add_action( 'wp_enqueue_scripts', 'oakwood_scripts' );
 
 /**
  * Implement the Custom Header feature.

@@ -12,7 +12,7 @@
 // Local project URL of your already running WordPress site.
 // > Could be something like "wpgulp.local" or "localhost"
 // > depending upon your local WordPress setup.
-const projectURL = 'onstage.local';
+const projectURL = 'oakwood.local';
 
 // Theme/Plugin URL. Leave it like it is; since our gulpfile.js lives in the root folder.
 const productURL = './';
@@ -91,11 +91,11 @@ const zipIgnoreGlob = [
 ];
 
 // >>>>> Translation options.
-const textDomain = 'onstage'; // Your text domain here.
-const translationFile = 'onstage.pot'; // Name of the translation file.
+const textDomain = 'oakwood'; // Your text domain here.
+const translationFile = 'oakwood.pot'; // Name of the translation file.
 const translationDestination = './languages'; // Where to save the translation files.
-const packageName = 'ONSTAGE'; // Package name.
-const bugReport = 'https://github.com/oakwoodgates/onstage/'; // Where can users report bugs.
+const packageName = 'OAKWOOD'; // Package name.
+const bugReport = 'https://github.com/oakwoodgates/oakwood/'; // Where can users report bugs.
 const lastTranslator = 'Oakwood Gates <wpguru4u@gmail.com>'; // Last translator Email ID.
 const team = 'WPGuru4u <wpguru4u@gmail.com>'; // Team's Email ID.
 

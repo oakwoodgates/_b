@@ -4,7 +4,7 @@
  *
  * @link https://jetpack.com/
  *
- * @package onstage
+ * @package oakwood
  */
 
 /**
@@ -14,13 +14,13 @@
  * See: https://jetpack.com/support/responsive-videos/
  * See: https://jetpack.com/support/content-options/
  */
-function onstage_jetpack_setup() {
+function oakwood_jetpack_setup() {
 	// Add theme support for Infinite Scroll.
 	add_theme_support(
 		'infinite-scroll',
 		array(
 			'container' => 'main',
-			'render'    => 'onstage_infinite_scroll_render',
+			'render'    => 'oakwood_infinite_scroll_render',
 			'footer'    => 'page',
 		)
 	);
@@ -33,7 +33,7 @@ function onstage_jetpack_setup() {
 		'jetpack-content-options',
 		array(
 			'post-details' => array(
-				'stylesheet' => 'onstage-style',
+				'stylesheet' => 'oakwood-style',
 				'date'       => '.posted-on',
 				'categories' => '.cat-links',
 				'tags'       => '.tags-links',
@@ -48,13 +48,13 @@ function onstage_jetpack_setup() {
 		)
 	);
 }
-add_action( 'after_setup_theme', 'onstage_jetpack_setup' );
+add_action( 'after_setup_theme', 'oakwood_jetpack_setup' );
 
-if ( ! function_exists( 'onstage_infinite_scroll_render' ) ) :
+if ( ! function_exists( 'oakwood_infinite_scroll_render' ) ) :
 	/**
 	 * Custom render function for Infinite Scroll.
 	 */
-	function onstage_infinite_scroll_render() {
+	function oakwood_infinite_scroll_render() {
 		while ( have_posts() ) {
 			the_post();
 			if ( is_search() ) :
