@@ -12,7 +12,7 @@
 // Local project URL of your already running WordPress site.
 // > Could be something like "wpgulp.local" or "localhost"
 // > depending upon your local WordPress setup.
-const projectURL = 'headless.local';
+const projectURL = 'onstage.local';
 
 // Theme/Plugin URL. Leave it like it is; since our gulpfile.js lives in the root folder.
 const productURL = './';
@@ -91,13 +91,13 @@ const zipIgnoreGlob = [
 ];
 
 // >>>>> Translation options.
-const textDomain = 'WPGULP'; // Your text domain here.
-const translationFile = 'WPGULP.pot'; // Name of the translation file.
+const textDomain = 'onstage'; // Your text domain here.
+const translationFile = 'onstage.pot'; // Name of the translation file.
 const translationDestination = './languages'; // Where to save the translation files.
-const packageName = 'WPGULP'; // Package name.
-const bugReport = 'https://AhmadAwais.com/contact/'; // Where can users report bugs.
-const lastTranslator = 'Ahmad Awais <your_email@email.com>'; // Last translator Email ID.
-const team = 'AhmadAwais <your_email@email.com>'; // Team's Email ID.
+const packageName = 'ONSTAGE'; // Package name.
+const bugReport = 'https://github.com/oakwoodgates/onstage/'; // Where can users report bugs.
+const lastTranslator = 'Oakwood Gates <wpguru4u@gmail.com>'; // Last translator Email ID.
+const team = 'WPGuru4u <wpguru4u@gmail.com>'; // Team's Email ID.
 
 // Browsers you care about for auto-prefixing. Browserlist https://github.com/ai/browserslist
 // The following list is set as per WordPress requirements. Though; Feel free to change.
