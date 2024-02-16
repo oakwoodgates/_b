@@ -8,8 +8,8 @@
  */
 
 if ( ! defined( 'ONSTAGE_VERSION' ) ) {
-	// Replace the version number of the theme on each release.
-	define( 'ONSTAGE_VERSION', '1.0.0' );
+	$theme = wp_get_theme();
+	define( 'ONSTAGE_VERSION', $theme->get( 'Version' ) );
 }
 
 /**
