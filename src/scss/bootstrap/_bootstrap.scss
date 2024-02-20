@@ -2,6 +2,28 @@
 // Configuration
  @import "../../../node_modules/bootstrap/scss/functions";
 
+$breadcrumb-bg: transparent;
+$breadcrumb-border-radius: 0;
+
+$input-btn-font-family: inherit;
+
+$dropdown-dark-box-shadow: none;
+
+$nav-link-font-weight: inherit;
+
+$card-title-color: inherit;
+$card-subtitle-color: inherit;
+$card-box-shadow: none;
+$card-cap-color: inherit;
+$card-height: auto;
+$card-color: inherit;
+
+$toast-color: inherit;
+$tooltip-margin: 0;
+
+$modal-content-color: inherit;
+$modal-footer-bg: inherit;
+
  @import "../../../node_modules/bootstrap/scss/variables";
  @import "../../../node_modules/bootstrap/scss/variables-dark";
  @import "../../../node_modules/bootstrap/scss/maps";
