@@ -46,6 +46,6 @@
 		"cache-clear": "gulp clearCache"
 	},
 	"dependencies": {
-		"bootstrap": "^5.3.2"
+		"bootstrap": "^5.3.3"
 	}
 }
