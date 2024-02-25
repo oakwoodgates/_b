@@ -154,25 +154,18 @@ function oakwood_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'oakwood_scripts' );
 
-/**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
 
-/**
- * Custom template tags for this theme.
- */
-require get_template_directory() . '/inc/template-tags.php';
+$files = [
+	'custom-header', // Implement the Custom Header feature.
+	'template-tags', // Custom template tags for this theme.
+	'template-functions', // Functions which enhance the theme by hooking into WordPress.
+	'customizer', // Customizer additions.
+	'nav-menu-walker', // Custom walker for nav menu
+];
 
-/**
- * Functions which enhance the theme by hooking into WordPress.
- */
-require get_template_directory() . '/inc/template-functions.php';
-
-/**
- * Customizer additions.
- */
-require get_template_directory() . '/inc/customizer.php';
+foreach ( $files as $file ) {
+	require get_template_directory() . '/inc/' . $file . '.php';
+}
 
 /**
  * Load Jetpack compatibility file.
