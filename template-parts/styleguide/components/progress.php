@@ -1,19 +1,34 @@
-<?php ?>
-<div class="progress mb-3" role="progressbar" aria-label="Example with label" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
-	<div class="progress-bar">0%</div>
+<?php 
+/**
+ * Progress
+ */
+
+$colors = oakwood_sg_colors();
+?>
+
+<?php foreach ( $colors as $color ) : 
+	$big = rand( 60, 100 );
+	$sml = rand( 20, 40 );
+	?>
+	<div class="progress mb-1" role="progressbar" aria-label="Example with label" aria-valuenow="<?php echo $big; ?>" aria-valuemin="0" aria-valuemax="100">
+		<div class="progress-bar bg-<?php echo $color; ?>" style="width: <?php echo $big; ?>%"><?php echo $big; ?>%</div>
+	</div>
+	<div class="progress mb-1" role="progressbar" aria-label="Example with label" aria-valuenow="<?php echo $sml; ?>" aria-valuemin="0" aria-valuemax="100">
+		<div class="progress-bar bg-<?php echo $color; ?>" style="width: <?php echo $sml; ?>%"><?php echo $sml; ?>%</div>
+	</div>
+	<div class="progress mb-3" role="progressbar" aria-label="Striped example" aria-valuenow="<?php echo ($big/2); ?>" aria-valuemin="0" aria-valuemax="100">
+		<div class="progress-bar progress-bar-striped bg-<?php echo $color; ?>" style="width: <?php echo ($big/2); ?>%"></div>
+	</div>
+
+<?php endforeach; ?>
+
+<div class="my-3"></div>
+
+<div class="progress" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
+	<div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 75%"></div>
 </div>
-<div class="progress mb-3" role="progressbar" aria-label="Success example with label" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">
-	<div class="progress-bar bg-success w-25">25%</div>
-</div>
-<div class="progress mb-3" role="progressbar" aria-label="Info example with label" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">
-	<div class="progress-bar text-bg-info w-50">50%</div>
-</div>
-<div class="progress mb-3" role="progressbar" aria-label="Warning example with label" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">
-	<div class="progress-bar text-bg-warning w-75">75%</div>
-</div>
-<div class="progress" role="progressbar" aria-label="Danger example with label" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-	<div class="progress-bar bg-danger w-100">100%</div>
-</div>
+
+<div class="my-3"></div>
 
 <div class="progress-stacked">
 	<div class="progress" role="progressbar" aria-label="Segment one - default example" style="width: 15%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100">

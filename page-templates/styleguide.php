@@ -92,10 +92,16 @@ function oakwood_sg_colors() {
 		<div class="bd-cheatsheet container-fluid bg-body">
 
 			<section id="content">
-				<h2 class="sticky-xl-top fw-bold pt-3 pt-xl-5 pb-2 pb-xl-3">Contents</h2>
+				<h2 class="sticky-xl-top fw-bold pt-3 pt-xl-5 pb-2 pb-xl-3 bg-body">Contents</h2>
 				<article class="my-3" id="typography">
 					<?php echo oakwood_sg_header( 'Typography', 'content/typography' ) ?>
 					<?php get_template_part( 'template-parts/styleguide/content/typography' ); ?>
+				</article>
+				<article class="my-3" id="lists">
+					<?php echo oakwood_sg_header( 'Lists', 'content/lists' ) ?>
+					<div>
+						<?php get_template_part( 'template-parts/styleguide/content/lists' ); ?>
+					</div>
 				</article>
 				<article class="my-3" id="images">
 					<?php echo oakwood_sg_header( 'Images', 'content/images' ) ?>
@@ -115,14 +121,9 @@ function oakwood_sg_colors() {
 			</section>
 
 			<section id="forms">
-				<h2 class="sticky-xl-top fw-bold pt-3 pt-xl-5 pb-2 pb-xl-3">Forms</h2>
+				<h2 class="sticky-xl-top fw-bold pt-3 pt-xl-5 pb-2 pb-xl-3 bg-body">Forms</h2>
 				<article class="my-3" id="overview">
 					<?php echo oakwood_sg_header( 'Form 1', 'forms/overview' ) ?>
-					<div>
-					</div>
-				</article>
-				<article class="my-3" id="disabled-forms">
-					<?php echo oakwood_sg_header( 'Disabled forms', 'forms/disabled-forms' ) ?>
 					<div>
 					</div>
 				</article>
@@ -130,7 +131,7 @@ function oakwood_sg_colors() {
 			</section>
 
 			<section id="components">
-				<h2 class="sticky-xl-top fw-bold pt-3 pt-xl-5 pb-2 pb-xl-3">Components</h2>
+				<h2 class="sticky-xl-top fw-bold pt-3 pt-xl-5 pb-2 pb-xl-3 bg-body">Components</h2>
 				<article class="my-3" id="accordion">
 					<?php echo oakwood_sg_header( 'Accordion', 'components/accordion' ) ?>
 					<div>
@@ -229,23 +230,8 @@ function oakwood_sg_colors() {
 				</article>
 				<article class="my-3" id="spinners">
 					<?php echo oakwood_sg_header( 'Spinners', 'components/spinners' ) ?>
-
 					<div>
-						{{< spinner.inline >}}
-						{{- range (index $.Site.Data "theme-colors") }}
-						<div class="spinner-border text-{{ .name }}" role="status">
-							<span class="visually-hidden">Loading...</span>
-						</div>
-						{{- end -}}
-						{{< /spinner.inline >}}
-
-						{{< spinner.inline >}}
-						{{- range (index $.Site.Data "theme-colors") }}
-						<div class="spinner-grow text-{{ .name }}" role="status">
-							<span class="visually-hidden">Loading...</span>
-						</div>
-						{{- end -}}
-						{{< /spinner.inline >}}
+						<?php get_template_part( 'template-parts/styleguide/components/spinners' ); ?>
 					</div>
 				</article>
 				<article class="my-3" id="toasts">

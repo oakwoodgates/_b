@@ -1,9 +1,12 @@
 <?php
-
+/* 
+ * This is the content for the Tables section of the Style Guide.
+ */
+$colors = oakwood_sg_colors();
 ?>
 
 <div>
-    <table class="table table-striped">
+    <table class="table table-striped table-hover">
         <thead>
             <tr>
                 <th scope="col">#</th>
@@ -33,7 +36,7 @@
         </tbody>
     </table>
 
-    <table class="table table-dark table-borderless">
+    <table class="table table-dark table-borderles table-hover">
         <thead>
             <tr>
                 <th scope="col">#</th>
@@ -77,19 +80,17 @@
                 <td>Cell</td>
                 <td>Cell</td>
             </tr>
-            {{< table.inline >}}
-            {{- range (index $.Site.Data "theme-colors") }}
-            <tr class="table-{{ .name }}">
-                <th scope="row">{{ .name | title }}</th>
-                <td>Cell</td>
-                <td>Cell</td>
-            </tr>
-            {{- end -}}
-            {{< /table.inline >}}
+            <?php foreach ($colors as $color) : ?>
+                <tr class="table-<?php echo $color; ?>">
+                    <th scope="row"><?php echo ucwords( $color ) ?></th>
+                    <td>Cell</td>
+                    <td>Cell</td>
+                </tr>
+            <?php endforeach; ?>
         </tbody>
     </table>
 
-    <table class="table table-sm table-bordered">
+    <table class="table table-sm table-bordered table-hover">
         <thead>
             <tr>
                 <th scope="col">#</th>

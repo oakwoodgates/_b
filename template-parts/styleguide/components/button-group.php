@@ -16,3 +16,30 @@
 		<button type="button" class="btn btn-secondary">8</button>
 	</div>
 </div>
+
+<div class="my-3"></div>
+
+<div class="btn-group" role="group" aria-label="Basic outlined example">
+	<button type="button" class="btn btn-outline-primary">Left</button>
+	<button type="button" class="btn btn-outline-primary">Middle</button>
+	<div class="btn-group" role="group">
+		<button type="button" class="btn btn-outline-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+			Right
+		</button>
+		<ul class="dropdown-menu">
+			<li><a class="dropdown-item" href="#">Dropdown link</a></li>
+			<li><a class="dropdown-item" href="#">Dropdown link</a></li>
+		</ul>
+	</div>
+</div>
+
+<div class="my-3"></div>
+
+<div class="btn-group-vertical" role="group" aria-label="Vertical radio toggle button group">
+	<input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio1" autocomplete="off" checked>
+	<label class="btn btn-outline-danger" for="vbtn-radio1">Radio 1</label>
+	<input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio2" autocomplete="off">
+	<label class="btn btn-outline-danger" for="vbtn-radio2">Radio 2</label>
+	<input type="radio" class="btn-check" name="vbtn-radio" id="vbtn-radio3" autocomplete="off">
+	<label class="btn btn-outline-danger" for="vbtn-radio3">Radio 3</label>
+</div>

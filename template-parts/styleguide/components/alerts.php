@@ -1,14 +1,16 @@
 <?php
-
+/**
+ * Alerts
+ */
+$colors = oakwood_sg_colors();
 ?>
 
-{{< alerts.inline >}}
-{{- range (index $.Site.Data "theme-colors") }}
-<div class="alert alert-{{ .name }} alert-dismissible fade show" role="alert">
-	A simple {{ .name }} alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
-	<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-</div>{{ end -}}
-{{< /alerts.inline >}}
+<?php foreach ( $colors as $color ) : ?>
+	<div class="alert alert-<?php echo esc_attr( $color ); ?> alert-dismissible fade show" role="alert">
+		A simple <?php echo esc_html( ucwords( $color ) ); ?> alert with <a href="#" class="alert-link">an example link</a>. Give it a click if you like.
+		<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+	</div>	
+<?php endforeach; ?>
 
 <div class="alert alert-success" role="alert">
 	<h4 class="alert-heading">Well done!</h4>

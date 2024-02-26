@@ -1,17 +1,36 @@
 <?php
+/**
+ * Badges
+ */
 
+$colors = oakwood_sg_colors();
+?>
+<h4>Badges <span class="badge text-bg-primary">New</span></h4>
+
+<?php foreach ( $colors as $color ) : ?>
+	<span class="badge bg-<?php echo esc_attr( $color ); ?>"><?php echo esc_html( ucwords( $color ) ); ?></span>
+<?php endforeach; ?>
+
+<div class="my-3"></div>
+
+<h4>Pill Badges <span class="badge rounded-pill text-bg-primary">New</span></h4>
+<?php foreach ( $colors as $color ) : ?>
+	<span class="badge rounded-pill bg-<?php echo esc_attr( $color ); ?>"><?php echo esc_html( ucwords( $color ) ); ?></span>
+<?php endforeach; 
 ?>
 
-<p class="h1">Example heading <span class="badge bg-primary">New</span></p>
-<p class="h2">Example heading <span class="badge bg-secondary">New</span></p>
-<p class="h3">Example heading <span class="badge bg-success">New</span></p>
-<p class="h4">Example heading <span class="badge bg-danger">New</span></p>
-<p class="h5">Example heading <span class="badge text-bg-warning">New</span></p>
-<p class="h6">Example heading <span class="badge text-bg-info">New</span></p>
-<p class="h6">Example heading <span class="badge text-bg-light">New</span></p>
-<p class="h6">Example heading <span class="badge bg-dark">New</span></p>
+<div class="my-3"></div>
 
-{{< badge.inline >}}
-{{- range (index $.Site.Data "theme-colors") }}
-<span class="badge rounded-pill {{ if or (eq .name "light") (eq .name "warning") (eq .name "info") }}text-{{ end }}bg-{{ .name }}">{{ .name | title }}</span>{{- end -}}
-{{< /badge.inline >}}
+<button type="button" class="btn btn-primary">
+	Notifications <span class="badge text-bg-dark">4</span>
+</button>
+
+<button type="button" class="btn btn-primary position-relative">
+	Inbox
+	<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+		99+	<span class="visually-hidden">unread messages</span>
+	</span>
+</button>
+
+<a href="javascript:void(0);"><span class="badge bg-primary">Linked Badge</span></a> 
+<a href="javascript:void(0);" class="badge bg-primary">Linked Badge</a>
