@@ -29,7 +29,7 @@
 
 		<header id="masthead" class="site-header">
 
-			<nav id+"site-navigation" class="main-navigation navbar navbar-expand-md navbar-dark bg-dark" aria-label="Offcanvas navbar large">
+			<nav id="site-navigation" class="main-navigation navbar navbar-expand-md navbar-dark bg-dark" aria-label="Offcanvas navbar large">
 				<div class="container">
 					<div class="navbar-brand">
 						<?php the_custom_logo(); ?>
