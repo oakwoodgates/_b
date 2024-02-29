@@ -1,9 +1,9 @@
 {
-	"name": "your-project",
-	"description": "A WPGulp based project.",
+	"name": "oakwood",
+	"description": "A WordPress dev friendly starter theme with Gulp and Bootstrap 5.",
 	"version": "0.0.1",
-	"repository": "ahmadawais/WPGulp",
-	"license": "MIT",
+	"repository": "oakwoodgates/oakwood",
+	"license": "GPL v2 or later",
 	"devDependencies": {
 		"@babel/core": "^7.0.0",
 		"@babel/preset-env": "^7.12.1",
