@@ -145,15 +145,16 @@ function oakwood_scripts() {
 	wp_enqueue_style( 'oakwood-style', $dir . '/assets/css/styles' . $min . '.css', [], $v );
 	// wp_style_add_data( 'oakwood-style', 'rtl', 'replace' );
 
+	wp_enqueue_script( 'oakwood-popper', 'https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js', [], $v, true );
+	wp_enqueue_script( 'oakwood-bootstrap','https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js', [], $v, true );
 	wp_enqueue_script( 'oakwood-vendor', $dir . '/assets/js/vendor' . $min . '.js', [], $v, true );
-	wp_enqueue_script( 'oakwood-custom', $dir . '/assets/js/custom' . $min . '.js', [], $v, true );
+	wp_enqueue_script( 'oakwood-custom', $dir . '/assets/js/bundle' . $min . '.js', [], $v, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'oakwood_scripts' );
-
 
 $files = [
 	'custom-header', // Implement the Custom Header feature.
