@@ -145,8 +145,10 @@ function oakwood_scripts() {
 	wp_enqueue_style( 'oakwood-style', $dir . '/assets/css/styles' . $min . '.css', [], $v );
 	// wp_style_add_data( 'oakwood-style', 'rtl', 'replace' );
 
+	wp_enqueue_script( 'oakwood-popper', 'https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js', [], $v, true );
+	wp_enqueue_script( 'oakwood-bootstrap','https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js', [], $v, true );
 	wp_enqueue_script( 'oakwood-vendor', $dir . '/assets/js/vendor' . $min . '.js', [], $v, true );
-	wp_enqueue_script( 'oakwood-custom', $dir . '/assets/js/custom' . $min . '.js', [], $v, true );
+	wp_enqueue_script( 'oakwood-custom', $dir . '/assets/js/bundle' . $min . '.js', [], $v, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -154,25 +156,17 @@ function oakwood_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'oakwood_scripts' );
 
-/**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
+$files = [
+	'custom-header', // Implement the Custom Header feature.
+	'template-tags', // Custom template tags for this theme.
+	'template-functions', // Functions which enhance the theme by hooking into WordPress.
+	'customizer', // Customizer additions.
+	'nav-menu-walker', // Custom walker for nav menu
+];
 
-/**
- * Custom template tags for this theme.
- */
-require get_template_directory() . '/inc/template-tags.php';
-
-/**
- * Functions which enhance the theme by hooking into WordPress.
- */
-require get_template_directory() . '/inc/template-functions.php';
-
-/**
- * Customizer additions.
- */
-require get_template_directory() . '/inc/customizer.php';
+foreach ( $files as $file ) {
+	require get_template_directory() . '/inc/' . $file . '.php';
+}
 
 /**
  * Load Jetpack compatibility file.
